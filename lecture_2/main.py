@@ -1,7 +1,7 @@
 CURRENT_YEAR = 2025
 
 
-def generate_profile(age:int) -> str:
+def generate_profile(age: int) -> str:
     """
     Determines a person's life stage based on their age.
 
@@ -16,7 +16,7 @@ def generate_profile(age:int) -> str:
     """
     if 0 <= age <= 12:
         return "Child"
-    elif 13 <= age <=19:
+    elif 13 <= age <= 19:
         return "Teenager"
     elif 20 <= age <= 100:
         return "Adult"
@@ -25,18 +25,15 @@ def generate_profile(age:int) -> str:
 
 print("Welcome, Dear student!")
 
-
-#Get user inputs
+# Get user inputs
 user_name = input("Enter your full name: ")
 birth_year_str = input("Enter your birth year: ")
 
-
-#Age calculation
+# Age calculation
 birth_year = int(birth_year_str)
-current_age = CURRENT_YEAR-birth_year
+current_age = CURRENT_YEAR - birth_year
 
-
-#Ask users hobbies
+# Ask users hobbies
 hobbies = []
 while True:
     user_input = input("Enter a favorite hobby or type 'stop' to finish:")
@@ -48,13 +45,13 @@ while True:
 
 life_stage = generate_profile(current_age)
 
-#Create profile dictionary
+# Create profile dictionary
 user_profile = {"name": user_name,
                 "age": current_age,
                 "stage": life_stage,
                 "hobbies": hobbies}
 
-#Formatted profile summary output
+# Formatted profile summary output
 print(f"\n---\n"
       f"Profile Summary:\n"
       f"Name: {user_profile["name"]}\n"
@@ -69,6 +66,3 @@ if user_profile["hobbies"]:
 else:
     print("You didn`t mention any hobbies")
 print("---")
-
-
-
