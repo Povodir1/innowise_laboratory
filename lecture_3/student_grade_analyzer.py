@@ -166,30 +166,33 @@ def main():
     The main function of the program, implementing the console menu.
     """
     print("--- Student Grade Manager ---")
-    while True:
-        choice = input(f"\nSelect action:\n"
-                       f"1. Add a new student\n"
-                       f"2. Add grades for a student\n"
-                       f"3. Show report (all students)\n"
-                       f"4. Find top performer\n"
-                       f"5. Exit\n"
-                       f"Your choice: ").strip()
+    try:
+        while True:
+            choice = input(f"\nSelect action:\n"
+                           f"1. Add a new student\n"
+                           f"2. Add grades for a student\n"
+                           f"3. Show report (all students)\n"
+                           f"4. Find top performer\n"
+                           f"5. Exit\n"
+                           f"Your choice: ").strip()
 
-        # Using match/case to handle the selection
-        match choice:
-            case "1":
-                add_new_student()
-            case "2":
-                add_grade_for_student()
-            case "3":
-                show_report()
-            case "4":
-                find_top_performer()
-            case "5":
-                print("Program terminated.")
-                break
-            case _:
-                print("Invalid choice. Please enter a number from 1 to 5.")
+            # Using match/case to handle the selection
+            match choice:
+                case "1":
+                    add_new_student()
+                case "2":
+                    add_grade_for_student()
+                case "3":
+                    show_report()
+                case "4":
+                    find_top_performer()
+                case "5":
+                    print("Program terminated.")
+                    break
+                case _:
+                    print("Invalid choice. Please enter a number from 1 to 5.")
+    except Exception as e:
+        print(e)
 
 
 # Program entry point
