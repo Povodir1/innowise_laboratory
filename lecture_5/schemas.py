@@ -4,7 +4,7 @@ from typing import Optional
 class BookCreate(BaseModel):
     title: str = Field(..., max_length=200)
     author: str = Field(..., max_length=100)
-    year: int = Field(..., ge=0, le=2100)
+    year: Optional[int] = Field(default=None, ge=0, le=2100)
 
 
 class BookUpdate(BaseModel):
@@ -17,4 +17,4 @@ class BookResponse(BaseModel):
     id: int
     title: str
     author: str
-    year: int
+    year: Optional[int]
